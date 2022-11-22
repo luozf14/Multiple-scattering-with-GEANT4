@@ -1,8 +1,5 @@
 # Multiple scattering with GEANT4
-A Geant4 program which simulates electron scattering on different materials and finally being detected by a Si-strip detector. The code is based on Geant4' s example ``basic/B1``.
-
-## Description
-Detailed description can be found in ProblemDescription.pdf.
+A Geant4 program which simulates electron scattering on different materials and finally being detected by a Si-strip detector. The code is based on Geant4' s example ``basic/B1``. Detailed description can be found in ProblemDescription.pdf.
 
 ## Prerequisites
 - Geant4 v11 (v10 does not work!)
