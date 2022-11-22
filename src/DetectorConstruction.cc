@@ -243,7 +243,7 @@ namespace B1
     void DetectorConstruction::ConstructSDandField()
     {
         // Sensitive detector
-        SiDetectorSD* aSiDetectorSD = new SiDetectorSD("/SiDetectorSD","SiDetectorHitsCollection");
+        SiDetectorSD *aSiDetectorSD = new SiDetectorSD("/SiDetectorSD", "SiDetectorHitsCollection");
         G4SDManager::GetSDMpointer()->AddNewDetector(aSiDetectorSD);
         SetSensitiveDetector("SiDetector", aSiDetectorSD, true);
     }

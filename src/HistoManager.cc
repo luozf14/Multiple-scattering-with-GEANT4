@@ -105,16 +105,16 @@ namespace B1
 
       // Create 1st ntuple (id = 0)
       analysisManager->CreateNtuple("Ntuple1", "Info of hits");
-      analysisManager->CreateNtupleIColumn("TrackID"); // column Id = 0
-      analysisManager->CreateNtupleSColumn("ParticleName"); // column Id = 1
+      analysisManager->CreateNtupleIColumn("TrackID");       // column Id = 0
+      analysisManager->CreateNtupleSColumn("ParticleName");  // column Id = 1
       analysisManager->CreateNtupleDColumn("EnergyDeposit"); // column Id = 2
       analysisManager->CreateNtupleDColumn("KineticEnergy"); // column Id = 3
-      analysisManager->CreateNtupleDColumn("Momentum.x"); // column Id = 4
-      analysisManager->CreateNtupleDColumn("Momentum.y"); // column Id = 5
-      analysisManager->CreateNtupleDColumn("Momentum.z"); // column Id = 6
-      analysisManager->CreateNtupleDColumn("Position.x"); // column Id = 7
-      analysisManager->CreateNtupleDColumn("Position.y"); // column Id = 8
-      analysisManager->CreateNtupleDColumn("Position.z"); // column Id = 9
+      analysisManager->CreateNtupleDColumn("Momentum.x");    // column Id = 4
+      analysisManager->CreateNtupleDColumn("Momentum.y");    // column Id = 5
+      analysisManager->CreateNtupleDColumn("Momentum.z");    // column Id = 6
+      analysisManager->CreateNtupleDColumn("Position.x");    // column Id = 7
+      analysisManager->CreateNtupleDColumn("Position.y");    // column Id = 8
+      analysisManager->CreateNtupleDColumn("Position.z");    // column Id = 9
       analysisManager->FinishNtuple();
 
       fFactoryOn = true;
@@ -180,7 +180,7 @@ namespace B1
     G4AnalysisManager *analysisManager = G4AnalysisManager::Instance();
 
     G4cout << "\n ----> print histograms statistic \n"
-           << G4endl;\
+           << G4endl;
     for (G4int i = 0; i < analysisManager->GetNofH1s(); ++i)
     {
       G4String name = analysisManager->GetH1Name(i);

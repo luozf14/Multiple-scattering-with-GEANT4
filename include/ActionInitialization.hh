@@ -37,15 +37,15 @@
 namespace B1
 {
 
-class ActionInitialization : public G4VUserActionInitialization
-{
+  class ActionInitialization : public G4VUserActionInitialization
+  {
   public:
     ActionInitialization();
     ~ActionInitialization() override;
 
     void BuildForMaster() const override;
     void Build() const override;
-};
+  };
 
 }
 

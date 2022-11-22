@@ -36,7 +36,6 @@
 
 class G4Run;
 
-
 /// Run action class
 ///
 /// In EndOfRunAction(), it calculates the dose in the selected volume
@@ -45,27 +44,25 @@ class G4Run;
 
 namespace B1
 {
-class HistoManager;
+  class HistoManager;
 
-class RunAction : public G4UserRunAction
-{
+  class RunAction : public G4UserRunAction
+  {
   public:
-    RunAction(HistoManager*);
+    RunAction(HistoManager *);
     ~RunAction() override;
 
-    void BeginOfRunAction(const G4Run*) override;
-    void   EndOfRunAction(const G4Run*) override;
+    void BeginOfRunAction(const G4Run *) override;
+    void EndOfRunAction(const G4Run *) override;
 
-    HistoManager* GetHistoManager(){return fHistoManager;}
+    HistoManager *GetHistoManager() { return fHistoManager; }
 
   private:
     // G4Accumulable<G4double> fEdep;
     // G4Accumulable<G4double> fEdep2;
-    HistoManager* fHistoManager;
-
-};
+    HistoManager *fHistoManager;
+  };
 
 }
 
 #endif
-

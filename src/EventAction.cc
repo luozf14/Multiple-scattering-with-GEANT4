@@ -77,7 +77,7 @@ namespace B1
 
     SiDetectorHitsCollection *hcSiDetector = (SiDetectorHitsCollection *)aEvent->GetHCofThisEvent()->GetHC(fHCID_SiDetector);
     G4int nofHitsSiDetector = hcSiDetector->GetSize();
-    if(nofHitsSiDetector==0)
+    if (nofHitsSiDetector == 0)
     {
       G4ExceptionDescription msg;
       msg << "No hits in Si detector of this event found.\n";
@@ -96,10 +96,10 @@ namespace B1
     G4String particleName = (*hcSiDetector)[0]->GetParticleName();
     G4double kineticEnergy = (*hcSiDetector)[0]->GetKineticEnergy();
     G4ThreeVector incidentMomentum = (*hcSiDetector)[0]->GetMomentum();
-    fHistoManager->FillHisto(0,eDep/keV,1.0);
-    fHistoManager->FillHisto(1,averagePosition.x(),1.0);
-    fHistoManager->FillHisto(2,averagePosition.y(),1.0);
-    fHistoManager->FillNtuple(trackID, particleName, eDep/keV, kineticEnergy, incidentMomentum, averagePosition);
+    fHistoManager->FillHisto(0, eDep / keV, 1.0);
+    fHistoManager->FillHisto(1, averagePosition.x(), 1.0);
+    fHistoManager->FillHisto(2, averagePosition.y(), 1.0);
+    fHistoManager->FillNtuple(trackID, particleName, eDep / keV, kineticEnergy, incidentMomentum, averagePosition);
   }
 
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

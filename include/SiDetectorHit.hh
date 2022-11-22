@@ -85,7 +85,6 @@ namespace B1
     G4double fKineticEnergy = 0.;
     G4ThreeVector fMomentum;
     G4ThreeVector fPosition;
-
   };
 
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

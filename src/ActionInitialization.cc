@@ -37,42 +37,44 @@
 namespace B1
 {
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-ActionInitialization::ActionInitialization()
-{}
+  ActionInitialization::ActionInitialization()
+  {
+  }
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-ActionInitialization::~ActionInitialization()
-{}
+  ActionInitialization::~ActionInitialization()
+  {
+  }
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-void ActionInitialization::BuildForMaster() const
-{
-  HistoManager*  histoMan = new HistoManager();
-  RunAction* runAction = new RunAction(histoMan);
-  SetUserAction(runAction);
-}
+  void ActionInitialization::BuildForMaster() const
+  {
+    HistoManager *histoMan = new HistoManager();
+    RunAction *runAction = new RunAction(histoMan);
+    SetUserAction(runAction);
+  }
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-void ActionInitialization::Build() const
-{
-  HistoManager*  histoMan = new HistoManager();
-  
-  SetUserAction(new PrimaryGeneratorAction);
+  void ActionInitialization::Build() const
+  {
+    HistoManager *histoMan = new HistoManager();
 
-  RunAction* runAction = new RunAction(histoMan);
-  SetUserAction(runAction);
+    SetUserAction(new PrimaryGeneratorAction);
 
-  EventAction* eventAction = new EventAction(runAction);
-  SetUserAction(eventAction);
+    RunAction *runAction = new RunAction(histoMan);
+    SetUserAction(runAction);
 
-  SetUserAction(new SteppingAction(eventAction));
-}
+    EventAction *eventAction = new EventAction(runAction);
+    SetUserAction(eventAction);
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+    SetUserAction(new SteppingAction(eventAction));
+  }
+
+  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 }

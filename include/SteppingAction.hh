@@ -41,20 +41,20 @@ class G4LogicalVolume;
 namespace B1
 {
 
-class EventAction;
+  class EventAction;
 
-class SteppingAction : public G4UserSteppingAction
-{
+  class SteppingAction : public G4UserSteppingAction
+  {
   public:
-    SteppingAction(EventAction* eventAction);
+    SteppingAction(EventAction *eventAction);
     ~SteppingAction() override;
 
     // method from the base class
-    void UserSteppingAction(const G4Step*) override;
+    void UserSteppingAction(const G4Step *) override;
 
   private:
-    EventAction* fEventAction = nullptr;
-};
+    EventAction *fEventAction = nullptr;
+  };
 
 }
 

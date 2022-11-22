@@ -41,18 +41,15 @@ class G4LogicalVolume;
 namespace B1
 {
 
-class DetectorConstruction : public G4VUserDetectorConstruction
-{
+  class DetectorConstruction : public G4VUserDetectorConstruction
+  {
   public:
     DetectorConstruction();
     ~DetectorConstruction() override;
 
-    G4VPhysicalVolume* Construct() override;
+    G4VPhysicalVolume *Construct() override;
     virtual void ConstructSDandField();
-
-
-  
-};
+  };
 
 }
 

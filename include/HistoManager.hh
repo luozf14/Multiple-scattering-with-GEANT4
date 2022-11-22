@@ -27,9 +27,9 @@
 /// \brief Definition of the HistoManager class
 //
 //
-// 
+//
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo...... 
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 #ifndef HistoManager_h
 #define HistoManager_h 1
@@ -41,29 +41,27 @@
 namespace B1
 {
 
-class HistoManager
-{
+  class HistoManager
+  {
   public:
     HistoManager();
-   ~HistoManager();
-
+    ~HistoManager();
 
     void Book();
     void Save();
-    
+
     void FillHisto(G4int id, G4double e, G4double weight = 1.0);
 
     void FillNtuple(G4int fTrackID, G4String fParticleName,
                     G4double fEnergyDeposit, G4double fKineticEnergy,
                     G4ThreeVector fMomentum, G4ThreeVector fPosition);
-    
-    void PrintStatistic();        
-    
-  private:
-    G4bool fFactoryOn;    
-};
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+    void PrintStatistic();
+
+  private:
+    G4bool fFactoryOn;
+  };
+
+  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 }
 #endif
-

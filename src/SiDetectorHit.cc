@@ -39,39 +39,40 @@
 namespace B1
 {
 
-G4ThreadLocal G4Allocator<SiDetectorHit>* SiDetectorHitAllocator = nullptr;
+  G4ThreadLocal G4Allocator<SiDetectorHit> *SiDetectorHitAllocator = nullptr;
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-SiDetectorHit::SiDetectorHit()
-{}
+  SiDetectorHit::SiDetectorHit()
+  {
+  }
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-SiDetectorHit::~SiDetectorHit() {}
+  SiDetectorHit::~SiDetectorHit() {}
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-G4bool SiDetectorHit::operator==(const SiDetectorHit& right) const
-{
-  return ( this == &right ) ? true : false;
-}
+  G4bool SiDetectorHit::operator==(const SiDetectorHit &right) const
+  {
+    return (this == &right) ? true : false;
+  }
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-void SiDetectorHit::Print()
-{
-  G4cout
-     << "  trackID: " << fTrackID
-     << "  Particle name: "<< fParticleName
-     << "  Energy deposit: "
-     << std::setw(7) << G4BestUnit(fEnergyDeposit,"Energy")
-    //  <<fEnergyDeposit
-     << "  Position: "
-     << std::setw(7) << G4BestUnit( fPosition,"Length")
-     << G4endl;
-}
+  void SiDetectorHit::Print()
+  {
+    G4cout
+        << "  trackID: " << fTrackID
+        << "  Particle name: " << fParticleName
+        << "  Energy deposit: "
+        << std::setw(7) << G4BestUnit(fEnergyDeposit, "Energy")
+        //  <<fEnergyDeposit
+        << "  Position: "
+        << std::setw(7) << G4BestUnit(fPosition, "Length")
+        << G4endl;
+  }
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 }
