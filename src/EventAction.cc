@@ -55,7 +55,7 @@ namespace B1
 
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-  void EventAction::BeginOfEventAction(const G4Event *aEvent)
+  void EventAction::BeginOfEventAction(const G4Event *)
   {
     G4SDManager *sdManager = G4SDManager::GetSDMpointer();
     fHCID_SiDetector = sdManager->GetCollectionID("SiDetectorHitsCollection");

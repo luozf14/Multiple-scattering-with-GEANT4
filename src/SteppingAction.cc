@@ -54,7 +54,7 @@ namespace B1
 
     //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-    void SteppingAction::UserSteppingAction(const G4Step *step)
+    void SteppingAction::UserSteppingAction(const G4Step*)
     {
     }
 
