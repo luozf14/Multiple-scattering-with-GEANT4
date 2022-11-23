@@ -35,7 +35,7 @@ This program takes JSON file as configuration (it is mandatory!). The example co
 
 ### Run
 ```
-$ ./exampleB1 <config.json>
+$ ./exampleB1 ../config/config.json
 ```
 
 ### Analysis
