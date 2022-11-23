@@ -18,16 +18,24 @@ cmake & make
 $ cmake ../ && make
 ```
 
-### Run
-- GUI mode
+### Configuration
+This program takes JSON file as configuration (it is mandatory!). The example config file is ``config/config.json``. Here below shows the content of this JSON file.
+```
+{
+    "GUI": 0,
+    "runMac": "run1.mac",
+    "Threads":10,
+    "Foil": 0 
+}
+```
+- GUI: 0 - shell mode, 1 - interactive mode.
+- RunMac: The .mac file defines how many particles you want to fire. Only valid for shell mode.
+- Threads: 0 - serial mode, N - multithread mode with N threads (N>0).
+- Foil: 0 - no foil, 1 - 304 stainless steel, 2 - Be
 
+### Run
 ```
-$ ./exampleB1
-```
-- Shell
-  
-```
-$ ./example run1.mac
+$ ./exampleB1 <config.json>
 ```
 
 ### Analysis
