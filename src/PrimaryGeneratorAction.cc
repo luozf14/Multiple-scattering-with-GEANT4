@@ -55,7 +55,6 @@ namespace B1
     G4ParticleDefinition *particle = particleTable->FindParticle(particleName = "e-");
     fParticleGun->SetParticleDefinition(particle);
     fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0., 0., 1.));
-    fParticleGun->SetParticleEnergy(2.5 * MeV);
   }
 
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -69,7 +68,7 @@ namespace B1
 
   void PrimaryGeneratorAction::GeneratePrimaries(G4Event *anEvent)
   {
-
+    fParticleGun->SetParticleEnergy(fBeamEnergy * MeV);
     fParticleGun->GeneratePrimaryVertex(anEvent);
   }
 

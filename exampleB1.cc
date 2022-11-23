@@ -69,8 +69,9 @@ int main(int argc, char **argv)
     G4int useGUI = config["GUI"];
     G4bool isInteractive = !!useGUI;
     std::string runMac = config["RunMac"];
-    G4int foilID = config["Foil"];
     G4int nThreads = config["Threads"];
+    G4int foilID = config["Foil"];
+    G4double beamEnergy = config["BeamEnergy"];
 
     // Optionally: choose a different Random engine...
     G4Random::setTheEngine(new CLHEP::MTwistEngine);
@@ -102,7 +103,9 @@ int main(int argc, char **argv)
     runManager->SetUserInitialization(physicsList);
 
     // User action initialization
-    runManager->SetUserInitialization(new ActionInitialization());
+    ActionInitialization* actionInit = new ActionInitialization();
+    actionInit->SetBeamEnergy(beamEnergy);
+    runManager->SetUserInitialization(actionInit);
 
     // Initialize visualization
     //

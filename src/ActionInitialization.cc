@@ -63,8 +63,9 @@ namespace B1
   void ActionInitialization::Build() const
   {
     HistoManager *histoMan = new HistoManager();
-
-    SetUserAction(new PrimaryGeneratorAction);
+    PrimaryGeneratorAction* pgAction = new PrimaryGeneratorAction();
+    pgAction->SetBeamEnergy(fBeamEnergy);
+    SetUserAction(pgAction);
 
     RunAction *runAction = new RunAction(histoMan);
     SetUserAction(runAction);
