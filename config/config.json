@@ -1,7 +1,7 @@
 {
     "GUI": 1,
     "RunMac": "run1.mac",
-    "Threads":0,
+    "Threads":10,
     "Foil": 2,
     "BeamEnergy": 0.5
 }
