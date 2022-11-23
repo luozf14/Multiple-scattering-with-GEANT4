@@ -153,12 +153,32 @@ namespace B1
         //
         // Foil
         //
-        G4String foilMaterialString = "304StainlessStel";
-        G4Material *foilMaterial = (foilMaterialString == "304StainlessSteel") ? stainlessSteel : nist->FindOrBuildMaterial("G4_Be");
-
         G4double boxFoilX = 5. * cm;
         G4double boxFoilY = 5. * cm;
-        G4double boxFoilZ = (foilMaterialString == "304StainlessSteel") ? 0.0254 * mm : 0.127 * mm;
+        G4double boxFoilZ;
+        G4Material *foilMaterial;
+
+        switch (fFoilID)
+        {
+        case 0:
+            foilMaterial = nist->FindOrBuildMaterial("G4_Galactic");
+            boxFoilZ = 1. * nm;
+            break;
+
+        case 1:
+            foilMaterial = stainlessSteel;
+            boxFoilZ = 0.0254 * mm;
+            break;
+
+        case 2:
+            foilMaterial = nist->FindOrBuildMaterial("G4_Be");
+            boxFoilZ = 0.127 * mm;
+            break;
+
+        default:
+            G4cerr << "\n----->FoilID has to be either 0, 1, or 2!" << G4endl;
+            abort();
+        }
 
         G4Box *solidFoil =
             new G4Box("Foil",                                          // its name

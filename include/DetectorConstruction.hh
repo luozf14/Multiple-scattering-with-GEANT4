@@ -41,15 +41,21 @@ class G4LogicalVolume;
 namespace B1
 {
 
-  class DetectorConstruction : public G4VUserDetectorConstruction
-  {
-  public:
-    DetectorConstruction();
-    ~DetectorConstruction() override;
+    class DetectorConstruction : public G4VUserDetectorConstruction
+    {
+    public:
+        DetectorConstruction();
+        ~DetectorConstruction() override;
 
-    G4VPhysicalVolume *Construct() override;
-    virtual void ConstructSDandField();
-  };
+        G4VPhysicalVolume *Construct() override;
+        virtual void ConstructSDandField();
+
+        void SetFoilID(G4int id) { fFoilID = id; }
+        G4int GetFoilID() { return fFoilID; }
+
+    private:
+        G4int fFoilID;
+    };
 
 }
 
