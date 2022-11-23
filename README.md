@@ -23,7 +23,7 @@ This program takes JSON file as configuration (it is mandatory!). The example co
 ```
 {
     "GUI": 0,
-    "runMac": "run1.mac",
+    "RunMac": "run1.mac",
     "Threads":10,
     "Foil": 0 
 }
