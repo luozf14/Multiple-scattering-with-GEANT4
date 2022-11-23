@@ -54,14 +54,10 @@ int main(int argc, char **argv)
 {
     // Detect interactive mode (if no arguments) and define UI session
     //
-    G4UIExecutive *ui = nullptr;
-    // if (argc == 1)
-    // {
-    //     ui = new G4UIExecutive(argc, argv);
-    // }
     if (argc != 2)
     {
-        G4cerr << "\n---> Usage: ./exampleB1 <config.json>" << G4endl;
+        G4cerr << "--->Error: wrong input parameters!"
+               << "\n--->Usage: ./exampleB1 <config.json>" << G4endl;
         return 0;
     }
 
@@ -89,16 +85,9 @@ int main(int argc, char **argv)
 
     // Construct the default run manager
     //
-    G4RunManager* runManager=nullptr;
-    if(nThreads==0)
-    {
-        runManager = G4RunManagerFactory::CreateRunManager(G4RunManagerType::Serial, nThreads);
-    }
-    else
-    {
-        runManager = G4RunManagerFactory::CreateRunManager(G4RunManagerType::MT, nThreads);
-    }
-    
+    G4RunManagerType runManagerType = (nThreads == 0) ? G4RunManagerType::Serial : G4RunManagerType::MT;
+    auto *runManager = G4RunManagerFactory::CreateRunManager(runManagerType, nThreads);
+
     // Set mandatory initialization classes
     //
     // Detector construction
@@ -137,7 +126,7 @@ int main(int argc, char **argv)
     else
     {
         // interactive mode
-        ui = new G4UIExecutive(argc, argv);
+        G4UIExecutive *ui = new G4UIExecutive(argc, argv);
         UImanager->ApplyCommand("/control/execute init_vis.mac");
         ui->SessionStart();
         delete ui;
