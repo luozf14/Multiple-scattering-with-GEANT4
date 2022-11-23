@@ -1,6 +1,6 @@
 {
-    "GUI": 0,
-    "runMac": "run1.mac",
+    "GUI": 1,
+    "RunMac": "run1.mac",
     "Threads":10,
-    "Foil": 0 
+    "Foil": 2 
 }

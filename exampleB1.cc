@@ -72,7 +72,7 @@ int main(int argc, char **argv)
     json config = json::parse(configStream);
     G4int useGUI = config["GUI"];
     G4bool isInteractive = !!useGUI;
-    std::string runMac = config["runMac"];
+    std::string runMac = config["RunMac"];
     G4int foilID = config["Foil"];
     G4int nThreads = config["Threads"];
 
