@@ -66,12 +66,11 @@ int main(int argc, char **argv)
     std::string configFile = argv[1];
     std::ifstream configStream(configFile.c_str());
     json config = json::parse(configStream);
-    G4int useGUI = config["GUI"];
-    G4bool isInteractive = !!useGUI;
-    std::string runMac = config["RunMac"];
-    G4int nThreads = config["Threads"];
-    G4int foilID = config["Foil"];
-    G4double beamEnergy = config["BeamEnergy"];
+    G4bool useGUI = config["GUI"].get<bool>();
+    G4String runMac = config["RunMac"].get<std::string>();
+    G4int nThreads = config["Threads"].get<G4int>();
+    G4int foilID = config["Foil"].get<G4int>();
+    G4double beamEnergy = config["BeamEnergy"].get<G4double>();
 
     // Optionally: choose a different Random engine...
     G4Random::setTheEngine(new CLHEP::MTwistEngine);
@@ -119,7 +118,7 @@ int main(int argc, char **argv)
 
     // Process macro or start UI session
     //
-    if (!isInteractive)
+    if (!useGUI)
     {
         // batch mode
         G4String command = "/control/execute ";

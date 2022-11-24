@@ -1,5 +1,5 @@
 {
-    "GUI": 1,
+    "GUI": true,
     "RunMac": "run1.mac",
     "Threads":10,
     "Foil": 2,
