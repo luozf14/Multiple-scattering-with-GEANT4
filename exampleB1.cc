@@ -66,7 +66,7 @@ int main(int argc, char **argv)
     std::string configFile = argv[1];
     std::ifstream configStream(configFile.c_str());
     json config = json::parse(configStream);
-    G4bool useGUI = config["GUI"].get<bool>();
+    G4bool useGUI = config["GUI"].get<G4bool>();
     G4String runMac = config["RunMac"].get<std::string>();
     G4int nThreads = config["Threads"].get<G4int>();
     G4int foilID = config["Foil"].get<G4int>();
