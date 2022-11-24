@@ -49,7 +49,6 @@ target_link_libraries(exampleB1 ${Geant4_LIBRARIES} ${HBOOK_LIBRARIES})
 set(EXAMPLEB1_SCRIPTS
   init_vis.mac
   run1.mac
-  run2.mac
   vis.mac
   plotHisto.C
 )
