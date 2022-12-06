@@ -44,6 +44,7 @@
 #include "G4PVPlacement.hh"
 #include "G4SystemOfUnits.hh"
 #include "G4UnitsTable.hh"
+#include "G4UserLimits.hh"
 
 namespace B1
 {
@@ -197,6 +198,10 @@ namespace B1
                           false,                                                                // no boolean operation
                           0,                                                                    // copy number
                           checkOverlaps);                                                       // overlaps checking
+
+        G4double maxStep = 10.*um;
+        logicFoil->SetUserLimits(new G4UserLimits(maxStep));
+
 
         //
         // Dry air
