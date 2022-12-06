@@ -42,5 +42,3 @@ $ ./exampleB1 ../config/config.json
 
 ### Analysis
 The output data file is ``Data.root``. A simple analysis ROOT macro is provided as ``plotHisto.C``. 
-
-To change the foil for vacuum, one needs to modify ``src/DetectorConstruction.cc``.
