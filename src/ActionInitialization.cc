@@ -55,6 +55,7 @@ namespace B1
   {
     HistoManager *histoMan = new HistoManager();
     RunAction *runAction = new RunAction(histoMan);
+    runAction->SetBeamEnergy(fBeamEnergy);
     SetUserAction(runAction);
   }
 
@@ -68,6 +69,7 @@ namespace B1
     SetUserAction(pgAction);
 
     RunAction *runAction = new RunAction(histoMan);
+    runAction->SetBeamEnergy(fBeamEnergy);
     SetUserAction(runAction);
 
     EventAction *eventAction = new EventAction(runAction);

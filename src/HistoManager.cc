@@ -52,7 +52,7 @@ namespace B1
 
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-  void HistoManager::Book()
+  void HistoManager::Book(std::string beamEnergy)
   {
     // Create or get analysis manager
     // The choice of analysis technology is done via selection of a namespace
@@ -76,7 +76,7 @@ namespace B1
 
     // Open an output file
     //
-    G4bool fileOpen = analysisManager->OpenFile("Data");
+    G4bool fileOpen = analysisManager->OpenFile("Data~"+beamEnergy);
     if (!fileOpen)
     {
       G4cerr << "\n---> HistoManager::Book(): cannot open "

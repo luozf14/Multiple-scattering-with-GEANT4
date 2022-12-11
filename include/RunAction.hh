@@ -44,24 +44,26 @@ class G4Run;
 
 namespace B1
 {
-  class HistoManager;
+    class HistoManager;
 
-  class RunAction : public G4UserRunAction
-  {
-  public:
-    RunAction(HistoManager *);
-    ~RunAction() override;
+    class RunAction : public G4UserRunAction
+    {
+    public:
+        RunAction(HistoManager *);
+        ~RunAction() override;
 
-    void BeginOfRunAction(const G4Run *) override;
-    void EndOfRunAction(const G4Run *) override;
+        void BeginOfRunAction(const G4Run *) override;
+        void EndOfRunAction(const G4Run *) override;
 
-    HistoManager *GetHistoManager() { return fHistoManager; }
+        HistoManager *GetHistoManager() { return fHistoManager; }
+        void SetBeamEnergy(G4double energy) { fBeamEnergy = energy; }
 
-  private:
-    // G4Accumulable<G4double> fEdep;
-    // G4Accumulable<G4double> fEdep2;
-    HistoManager *fHistoManager;
-  };
+    private:
+        // G4Accumulable<G4double> fEdep;
+        // G4Accumulable<G4double> fEdep2;
+        HistoManager *fHistoManager;
+        G4double fBeamEnergy;
+    };
 
 }
 

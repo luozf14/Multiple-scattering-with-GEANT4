@@ -44,35 +44,39 @@
 namespace B1
 {
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+    //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-RunAction::RunAction(HistoManager* histoMan)
-:G4UserRunAction(), fHistoManager(histoMan)
-{}
+    RunAction::RunAction(HistoManager *histoMan)
+        : G4UserRunAction(), fHistoManager(histoMan)
+    {
+    }
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+    //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-RunAction::~RunAction()
-{}
+    RunAction::~RunAction()
+    {
+    }
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+    //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-void RunAction::BeginOfRunAction(const G4Run* aRun)
-{
-    G4cout << "### Run " << aRun->GetRunID() << " start." << G4endl;
-    fHistoManager->Book(); 
-}
+    void RunAction::BeginOfRunAction(const G4Run *aRun)
+    {
+        G4cout << "### Run " << aRun->GetRunID() << " start." << G4endl;
+        std::stringstream stream;
+        stream<< std::fixed << std::setprecision(2) << fBeamEnergy;
+        std::string energy = stream.str();
+        replace(energy.begin(), energy.end(), '.', '_');
+        G4cout << "### Run " << energy << G4endl;
+        fHistoManager->Book(energy);
+    }
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+    //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-void RunAction::EndOfRunAction(const G4Run*)
-{
-    // fHistoManager->PrintStatistic();
-    fHistoManager->Save();
-}
+    void RunAction::EndOfRunAction(const G4Run *)
+    {
+        // fHistoManager->PrintStatistic();
+        fHistoManager->Save();
+    }
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
-
-
+    //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 }

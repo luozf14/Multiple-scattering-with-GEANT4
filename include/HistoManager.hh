@@ -47,7 +47,7 @@ namespace B1
     HistoManager();
     ~HistoManager();
 
-    void Book();
+    void Book(std::string beamEnergy);
     void Save();
 
     void FillHisto(G4int id, G4double e, G4double weight = 1.0);
