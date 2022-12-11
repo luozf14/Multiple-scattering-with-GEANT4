@@ -31,7 +31,7 @@ This program takes JSON file as configuration (it is mandatory!). The example co
 ```
 - GUI: false - batch mode, true - interactive mode.
 - RunMac: The .mac file defines how many particles you want to fire. Only valid for batch mode.
-- Threads: 0 - serial mode, N - multithread mode with N threads (N>0).
+- Threads: 1 - serial mode, N - multithread mode with N threads (N>0).
 - Foil: 0 - no foil, 1 - 304 stainless steel, 2 - Be.
 - BeamEnergy: any non negative value.
 
