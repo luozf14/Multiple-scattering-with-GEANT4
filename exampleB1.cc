@@ -85,7 +85,7 @@ int main(int argc, char **argv)
 
     // Construct the default run manager
     //
-    G4RunManagerType runManagerType = (nThreads == 0) ? G4RunManagerType::Serial : G4RunManagerType::MT;
+    G4RunManagerType runManagerType = (nThreads == 1) ? G4RunManagerType::Serial : G4RunManagerType::MT;
     auto *runManager = G4RunManagerFactory::CreateRunManager(runManagerType, nThreads);
 
     // Set mandatory initialization classes
